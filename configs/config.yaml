@@ -1,0 +1,64 @@
+training:
+  project: TrajICL
+  batch_size: 16
+  epochs: 100
+  optimizer: adamw
+  lr: 0.0001
+  weight_decay: 0
+  lr_decay: 1
+  lr_drop: true
+  scheduler: cosine
+  warmup_steps: 3
+  max_grad_norm: 1.0
+  num_workers: 8
+  pin_mem: True
+  seed: 0
+  resize: 0.01
+  freeze_encoder: False
+
+aug:
+  corrupt:
+    p: 0.5
+    ratio:
+      min: 0
+      max: 0.5
+    noise_ratio:
+      random: True
+      ratio:
+    noise:
+      range_noise_dev: True
+      noise_dev: 0.3
+  short:
+    p: 0.5
+    min_hist_len: 2
+    max_hist_len: 8
+  change_num_example: True
+
+dataset:
+  name: motsynth
+  num_example: 0
+  prompting: sim
+  pool_ratio: 1
+
+model:
+  num_future: 20
+  hist_len: 9
+  fut_len: 12
+  num_enlayers_local: 6
+  num_enlayers_global: 3
+  num_denlayers: 3
+  activation: relu
+  rel_pos_embedding: True
+  num_heads: 4
+  dim_hidden: 128
+  dim_feedforward: 1024
+  output_scale: 1
+
+load_model:
+  resume: False
+  model_dir: TrajICL
+  model_path:
+
+output_dir: results
+device: cuda
+wandb: True
