@@ -62,11 +62,6 @@ python train.py -m training.epochs=400 training.warmup_steps=12 dataset.num_exam
 python eval.py
 ```
 
-## ✅ TODO
-
-- [ ] Add prediction-guided example selection code
-- [ ] Add other datasets
-
 ## 👏 Acknowledgement
 
 We sincerely thank the authors of Social-Transmotion for providing their [source code](https://github.com/vita-epfl/social-transmotion), which has been invaluable to our work. We are immensely grateful for their contribution.
@@ -76,10 +71,12 @@ We sincerely thank the authors of Social-Transmotion for providing their [source
 If you use this code for your research, please cite our paper.
 
 ```bib
-@article{Fujii2025TrajICL,
-  title = {Towards Predicting Any Human Trajectory In Context},
-  author= {Fujii, Ryo and Hachiuma, Ryo and Saito, Hideo},
-  journal={Advances in Neural Information Processing Systems (NeurIPS)},
-  year={2025}
+@inproceedings{
+  fujii2026towards,
+  title={Towards Predicting Any Human Trajectory In Context},
+  author={Ryo Fujii and Hideo Saito and Ryo Hachiuma},
+  booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+  year={2026},
+  url={https://openreview.net/forum?id=qB1UKvjO0N}
 }
 ```
